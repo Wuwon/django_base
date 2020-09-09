@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Post_App<h1>
+    {% for col in post %}
+    <div>
+    {{col.author}}
+    <a href="{% url 'detail' col.id %}">{{col.subject}}</a>
+    {{col.create_time}}
+    </div>
+    {% endfor %}
+<body>
+</html>
