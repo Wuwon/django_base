@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+    
+    
+{% block content %}
+<div class="container">
+    <h1>edit!<h1>
+    <form action="{% url 'update' post.pk %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label>작성자 : {{post.author}} </label>
+    </div>
+    <div>
+        <label>제목 : <label>
+        <input type="text" name="subject">
+    </div>
+    <div>
+        <label>내용<label>
+        <textarea name="body">{{post.body}}</textarea>
+    </div>
+    <div>
+        <label>이미지<label>
+        <input type="file" name="image">
+    </div>
+    
+    <button type="submit">작성하기</button>
+
+    </form>
+</div>
+{% endblock %}

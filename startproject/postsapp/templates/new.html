@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+    
+    
+{% block content %}
+<div class="container">
+    <h1>New!<h1>
+    <form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label>작성자</label>
+        <input type="text" name="author">
+    </div>
+    <div>
+        <label>제목<label>
+        <input type="text" name="subject">
+    </div>
+    <div>
+        <label>내용<label>
+        <textarea name="body"></textarea>
+    </div>
+    <div>
+        <label>이미지<label>
+        <input type="file" name="image">
+    </div>
+    
+    <button type="submit">작성하기</button>
+
+    </form>
+</div>
+{% endblock %}

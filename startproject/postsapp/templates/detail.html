@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+    
+    
+{% block content %}
+    <div class="container">
     <h1>Detail Page<h1>
-    <div>
     {{post.author}}
     {{post.subject}}
     {{post.body}}
     {{post.create_time}}
+    <a href ="{% url 'edit' post.pk %}">수정하기</a>
+    <a href ="{% url 'delete' post.pk %}">삭제하기</a>
     </div>
-<body>
-</html>
+{% endblock %}
